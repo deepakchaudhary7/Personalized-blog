@@ -1,0 +1,17 @@
+<%include partials/header.ejs%>
+<div class="container">
+  <div class="row thumbnail" style="width:60%;margin:0 auto;"> 
+    <h1><%=blogs.title%></h1>
+    <img src="<%=blogs.image%>">
+    <h4><%=blogs.body%></h4>
+    <div ><%=blogs.created.toDateString()%></div>
+    <div sytle="display:inline">
+	      <form action="/blogs/<%= blogs._id%>/edit" method="GET">
+	           <button  type="submit" class="btn btn-primary btn pull-left">  Edit This Post</button>
+	      </form>
+	      <form action="/blogs/<%=blogs._id%>?_method=DELETE" method="POST">
+	            <button type="submit" class="btn btn-danger btn pull-right">   Delete This Post   </button>
+	      </form>
+    </div>
+  </div>
+</div>

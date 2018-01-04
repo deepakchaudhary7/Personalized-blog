@@ -1,0 +1,23 @@
+<%include partials/header.ejs%>
+
+<div style="text-align:center;">
+   <h1><strong>MY BLOGS</strong></h1>
+</div>
+<div class="container" style="width:70%;rgin:0 auto;border:none !important;">
+	<% blogs.forEach(function(blog){%>
+		 <div class="container row"> 
+	        <div class="col-lg-4 thumbnail">
+	           <div style="text-align:center;">
+	             <h2><strong><%= blog.title%></strong></h2>
+	           </div>
+               <img src="<%= blog.image%>">
+               <h3><%= blog.body.substring(0,25)%>...</h3>
+               <a class="btn btn-success" href="/blogs/<%= blog._id%>%>">Read More</a>    
+               <span ><%=blogs.created%></span>
+	        </div>
+		 </div>		 
+		 
+	<%})%>
+</div>
+
+<%include partials/footer.ejs%>
